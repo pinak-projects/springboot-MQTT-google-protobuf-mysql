@@ -18,4 +18,4 @@ Project brief:
 
 To compile Protocol Buffers using Maven, please refer [this article](https://dzone.com/articles/compile-protocol-buffers-using-maven)
 
-##### _For further documentation regarding project, please refer Documents folder._
+##### _For further documentation regarding project, please refer Documents folder._ :v:
