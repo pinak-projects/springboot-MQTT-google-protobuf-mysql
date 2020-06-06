@@ -10,6 +10,6 @@ This project serves two purposes:
 
 VerneMQ is used as MQTT broker, please refer [installation doc](https://docs.vernemq.com/installation/debian_and_ubuntu)
 
-##### To compile Protocol Buffers using Maven, please refer [this article](https://dzone.com/articles/compile-protocol-buffers-using-maven)
+To compile Protocol Buffers using Maven, please refer [this article](https://dzone.com/articles/compile-protocol-buffers-using-maven)
 
-_For further documentation regarding project, please refer Documents folder._
+##### _For further documentation regarding project, please refer Documents folder._
