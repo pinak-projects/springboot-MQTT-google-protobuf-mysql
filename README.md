@@ -2,7 +2,7 @@
 
 Project brief:
 1. Syncing data between MQTT Publisher server (AMS Device simulator) and MQTT Subscriber server.
-2. After successfully syncing, the publisher sends live data stream to the subscriber and subscriber stores the data in mysql database and also relay it to the client interface. 
+2. After successful syncing, the publisher sends live data stream to the subscriber and subscriber stores the data in mysql database and also relay it to the client interface. 
 
 ![Screenshot](https://github.com/pinakjakhr/springboot-MQTT-google-protobuf-mysql/blob/master/0.%20Documents/MQTT.jpg)
 
