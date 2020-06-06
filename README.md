@@ -2,7 +2,7 @@
 
 This project serves two purposes:
 1. Syncing data between MQTT Publisher server (Device simulator) and MQTT Subscriber server.
-2. After successfully syncing, the publisher sends live data stream to the subscriber and subscriber stores the date in mysql database and also relay it to the client interface. 
+2. After successfully syncing, the publisher sends live data stream to the subscriber and subscriber stores the data in mysql database and also relay it to the client interface. 
 
 [Google Protocol Buffers](https://developers.google.com/protocol-buffers/docs/javatutorial) are used for data communication between the MQTT publisher and the subscriber.
 
