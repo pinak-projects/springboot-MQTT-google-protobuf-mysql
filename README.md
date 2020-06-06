@@ -6,9 +6,15 @@ Project brief:
 
 ![Screenshot](https://github.com/pinakjakhr/springboot-MQTT-google-protobuf-mysql/blob/master/0.%20Documents/MQTT.jpg)
 
-[Google Protocol Buffers](https://developers.google.com/protocol-buffers/docs/javatutorial) are used for data communication between MQTT publisher and MQTT subscriber.
+#### Prerequisites:
 
-VerneMQ is used as MQTT broker, please refer [installation doc](https://docs.vernemq.com/installation/debian_and_ubuntu)
+- Java 1.8
+- Gradle 4.10
+- Maven
+- MySQL 5.6+ 
+- [Google Protocol Buffers](https://developers.google.com/protocol-buffers/docs/javatutorial) are used for data communication between MQTT publisher and MQTT subscriber.
+
+- VerneMQ is used as MQTT broker, please refer [installation doc](https://docs.vernemq.com/installation/debian_and_ubuntu)
 
 To compile Protocol Buffers using Maven, please refer [this article](https://dzone.com/articles/compile-protocol-buffers-using-maven)
 
