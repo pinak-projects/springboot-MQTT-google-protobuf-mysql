@@ -1,6 +1,6 @@
 # Spring Boot MQTT Google Protobuf
 
-This project serves two purposes:
+Project brief:
 1. Syncing data between MQTT Publisher server (AMS Device simulator) and MQTT Subscriber server.
 2. After successfully syncing, the publisher sends live data stream to the subscriber and subscriber stores the data in mysql database and also relay it to the client interface. 
 
