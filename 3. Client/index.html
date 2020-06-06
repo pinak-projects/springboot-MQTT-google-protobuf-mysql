@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Graph</title>
+    <link href="bootstrap.css" rel="stylesheet">
+   <style>
+		body {
+			margin: auto;
+  width: 70%;
+    padding: 50px;
+		}
+		#console {
+		    margin-left: auto;
+            margin-right: auto;
+			height: 100px;
+			width: 100px;
+			overflow: auto;
+		}
+		.username-msg {color:orange;}
+		.connect-msg {color:green;}
+		.disconnect-msg {color:red;}
+		.send-msg {color:#888}
+	</style>
+</head>
+<body>
+	<table style="width:100%">
+	 <tr>
+	<td><center><br><canvas id="smoothie-chart" width="650" height="250"></canvas></td></center>
+</tr>
+<!-- <tr>
+        <td><center><br>Parameter 2<br>
+            <textarea name="" id="param2values" cols="35" rows="10"></textarea>
+        </td></center>
+    </tr> -->
+<script src="js/socket.io/socket.io.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/smoothie.js"></script>
+ <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+<script>
+   //var userName = 'user' + Math.floor((Math.random() * 1000) + 1);
+    var socket = io('http://142.93.220.95:9092');
+    socket.connect();
+
+    socket.on('connect', function () {
+     //   output('<span class="connect-msg">Client has connected to the server!</span>');
+     console.log('connected');
+    });
+  //socket.on('toclient', function (data) {
+   //  console.log('Received message', data);
+   //   output('<span class="username-msg">' + data.userName + ':</span> ' + data.message);
+   // ));
+
+    socket.on('disconnect', function () {
+    	console.log('disconnected');
+//        output('<span class="disconnect-msg">The client has disconnected!</span>');
+    });
+
+    function sendDisconnect() {
+        socket.disconnect();
+    }
+
+var chart = new SmoothieChart({millisPerPixel:100,maxValueScale:0.95,interpolation:'linear',scaleSmoothing:0.853,maxValue:13,minValue:11,grid:{millisPerLine:5000,verticalSections:4}}),
+    canvas = document.getElementById('smoothie-chart'),
+    series = new TimeSeries();
+
+// Data
+var line1 = new TimeSeries();
+
+socket.on("run/param1",function(param1){
+   // console.log(graphdata);
+	var date = new Date().getTime()
+	var values=JSON.parse(param1).value; 
+		series.append(date, values);	
+})
+
+socket.on("run/param2",function(param2){
+ //console.log("param2 "+ param2);
+	var date = new Date().getTime()
+	var values=JSON.parse(param2).value; 
+	output(  values );
+})
+
+function output(message) {	
+            var element = $("<div>" + message + "</div>");
+			$('#console').prepend(element);
+		}
+
+ chart.addTimeSeries(series, {lineWidth:2,strokeStyle:'#00d2d2',fillStyle:'rgba(90,208,248,0.50)'});
+ chart.streamTo(canvas, 1008);
+
+</script>
+
+<div id="console" class="well">
+	</div>
+
+</body>
+</html>

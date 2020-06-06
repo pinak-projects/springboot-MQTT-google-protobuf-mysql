@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package proto;
+
+option java_package = "com.pinak.pub.model";
+option java_outer_classname = "DeviceConnect";
+
+message DeviceConnectProto {
+    string clientId = 1;
+    uint64 time = 2;
+}

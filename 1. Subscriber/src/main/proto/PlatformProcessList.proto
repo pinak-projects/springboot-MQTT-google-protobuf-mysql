@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package proto;
+
+option java_package = "org.pinak.sub.model";
+option java_outer_classname = "PlatformProcessProto";
+
+message PlatformProcess {
+
+  message PlatformProcessDetails {
+    string processId = 1;
+    string title = 2;
+    string updatedOn = 3;
+    string productName = 4;
+    int32 modified = 5;
+    bool isActive = 6;
+     }
+
+  repeated PlatformProcessDetails platformProcessDetails = 1;
+
+   message ProcessIds {
+    string processId = 1;
+    int64 pid = 2;
+  }
+
+  repeated ProcessIds processIds = 2;
+}

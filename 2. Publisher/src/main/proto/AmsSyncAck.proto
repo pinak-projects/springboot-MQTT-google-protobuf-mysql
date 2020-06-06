@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package proto;
+
+option java_package = "com.pinak.pub.model";
+option java_outer_classname = "AmsSyncAckProto";
+
+message AmsSyncAck {
+   int64 clientId = 1;
+   bool received = 2;
+}

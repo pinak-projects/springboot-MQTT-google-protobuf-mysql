@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package proto;
+
+option java_package = "com.pinak.pub.model";
+option java_outer_classname = "UserSyncResponseProto";
+
+message UserSyncResponse {
+
+  message User {
+  int64 userId = 1;
+  string username = 2;
+  string fullname = 3;
+  string email = 4;
+  string password = 5;
+  string countryCode = 6;
+  string phone = 7;
+  string department = 8;
+  string designation = 9;
+  string status = 10;
+  string createdOn = 11;
+  string updatedOn = 12;
+
+  message Roles {
+    int64 roleId = 1;
+    string roleDesc = 2;
+     }
+
+  repeated Roles roles = 13;
+
+  message Manager {
+    int64 userId = 1;
+    string email = 2;
+    string fullname = 3;
+    string username = 4;
+    string phone = 6;
+    string countryCode = 7;
+  }
+
+  Manager manager = 14;
+}
+  repeated User user = 1;
+}
